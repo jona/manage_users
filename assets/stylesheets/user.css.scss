@@ -1,0 +1,13 @@
+@import "mixins";
+
+#user-edit{width:500px;}
+#user-edit > section{padding:10px 20px;}
+#users-list{padding:10px 20px;}
+#users-list li{list-style:none; padding:10px; cursor:pointer; @include opacity(.6);}
+#users-list .name{}
+#users-list .email{@include font-size12;}
+#users-list li:hover{@include opacity(.9);}
+#users-list li.active{border-left:2px solid $color-orange-secondary; @include opacity(1); background:#FCF4ED;}
+
+#user-form > header h1 span{font-weight:200;}
+#user-form > section{padding:20px;}

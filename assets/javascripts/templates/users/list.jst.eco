@@ -1,0 +1,4 @@
+<li id="<%= @id %>">
+  <div class="name"><%= @name %></div>
+  <div class="email"><%= @email %></div> 
+</li>

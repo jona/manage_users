@@ -1,0 +1,36 @@
+<header>
+  <h1>User: <span><%= @name %></span></h1>
+</header>
+<section>
+  <form accept-charset="UTF-8" action="/users/<%= @id %>" class="edit_user" method="post">
+    <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"><input name="authenticity_token" type="hidden" value="mAduJsaZH73IZJnCwphb11GEJmrctA9SwCzb+LFjd8o="></div>
+    <div class="field">
+      <label for="user_name">Name</label>
+      <input class="form-control" id="user_name" name="user[name]" size="30" type="text" value="<%= @name %>">
+    </div>
+    <div class="field">
+      <label for="user_email">E-mail address</label>
+        <input class="form-control" id="user_email" name="user[email]" size="30" type="text" value="<%= @email %>">
+    </div>
+    <div class="field">
+      <label for="user_password">Password</label>
+        <input class="form-control" id="user_password" name="user[password]" size="30" type="password">
+    </div>
+    <div class="field">
+      <label for="user_password_confirmation">Confirm Password</label>
+        <input class="form-control" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password">
+    </div>
+    <div class="field">
+      <label>Role</label><br>
+      <input type="hidden" name="role[admin]" value="0">
+      <input type="checkbox" name="role[admin]" id="admin_checkbox" value="1"<% if @admin: %> checked <% end %>> <label for="admin_checkbox">Admin</label>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary btn-state" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Saving changes" name="commit" type="submit">Save Changes</button>
+      <div class="btn btn-danger btn-delete">
+        <span class="btn-text"><i class="fa fa-times"></i> Delete User</span>
+        <span class="btn-confirm">Are you sure? <a href="/users/<%= @id %>" data-method="delete" rel="nofollow" class="delete-link">Yes</a> / <a href="#" class="deny-delete">No</a></span>
+      </div>
+    </div>
+  </form>
+</section>
